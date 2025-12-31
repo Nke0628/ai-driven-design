@@ -59,7 +59,7 @@ AI を活用した開発フローの実践ガイド
 │       ↓                                                     │
 │  /design <identifier> <説明>                                │
 │       ↓                                                     │
-│  /tasks <identifier>  → tasks.md + feature-*.md 生成        │
+│  /tasks <identifier>  → tasks.md 生成                       │
 │       ↓                                                     │
 │  /implement <identifier> 1  → タスク1を実装                  │
 │  /implement <identifier> 2  → タスク2を実装                  │
@@ -98,12 +98,9 @@ AI を活用した開発フローの実践ガイド
 ```
 docs/
 └── <identifier>/           # 例: SMP-123
-    ├── requirement.md      # /requirement で生成
+    ├── requirement.md      # /requirement で生成（受け入れ条件込み）
     ├── design.md           # /design で生成
-    ├── tasks.md            # /tasks で生成
-    ├── feature-1.md        # /tasks で生成（タスク1）
-    ├── feature-2.md        # /tasks で生成（タスク2）
-    ├── feature-3.md        # /tasks で生成（タスク3）
+    ├── tasks.md            # /tasks で生成（対応UC紐付け）
     ├── feature.md          # /feature で生成（小規模改修）
     ├── bugfix.md           # /bugfix で生成
     └── testcase.md         # /testcase で生成
@@ -115,7 +112,7 @@ docs/
 |----------|------|------|
 | `/requirement` | `/requirement <identifier> <説明>` | 要件定義書の作成 |
 | `/design` | `/design <identifier> <説明>` | 詳細設計書の作成 |
-| `/tasks` | `/tasks <identifier>` | タスク分割 & ユースケース生成 |
+| `/tasks` | `/tasks <identifier>` | タスク分割（対応UC紐付け） |
 | `/feature` | `/feature <identifier> <説明>` | 小規模改修の仕様書作成 |
 | `/bugfix` | `/bugfix <identifier> <説明>` | バグ修正仕様書の作成 |
 | `/implement` | `/implement <identifier> [task-no]` | 実装 |
@@ -134,9 +131,12 @@ docs/
 
 **出力**: `docs/SMP-123/requirement.md`
 
-- 機能概要（What / Why）
+- 機能概要（What / Why / Who）
+- 用語定義
 - ユースケース一覧（UC-001, UC-002...）
-- 機能要件・非機能要件
+- ビジネスルール
+- 受け入れ条件（UC単位で正常系・異常系）
+- 非機能要件
 - 確認事項
 
 ### 3.2 詳細設計
@@ -147,34 +147,24 @@ docs/
 
 **出力**: `docs/SMP-123/design.md`
 
-- 機能概要（機能名、機能ID、概要、対象ユーザー）
-- 処理フロー（フロー図、処理フロー説明）
-- クラス設計（クラス図、クラス一覧、メソッド定義）
-- データ設計（データモデル、テーブル定義、ER図）
-- インターフェース設計（外部インターフェース、API設計）
-- 画面設計（画面一覧、画面レイアウト、画面項目定義）
-- エラー設計（エラー一覧、例外処理方針）
-- 非機能要件（性能要件、セキュリティ要件）
-- テスト観点
+- 処理フロー（シーケンス図、処理ステップ）
+- データ設計（該当する場合）
+- API設計（該当する場合）
+- 画面設計（該当する場合）
+- 実装方針
 
-### 3.3 タスク分割 & ユースケース生成
+### 3.3 タスク分割
 
 ```bash
 /tasks SMP-123
 ```
 
-**出力**:
-- `docs/SMP-123/tasks.md` - タスク一覧
-- `docs/SMP-123/feature-1.md` - タスク1のユースケース
-- `docs/SMP-123/feature-2.md` - タスク2のユースケース
-- ...
+**出力**: `docs/SMP-123/tasks.md`
 
-各ユースケースには以下を含む：
-- ユーザーストーリー
-- 基本フロー
-- ビジネスルール
-- 受け入れ条件
-- 実装方針
+- タスク一覧（対応UC紐付け）
+- 依存関係
+
+※ 受け入れ条件は `requirement.md` を参照
 
 ### 3.4 実装
 
@@ -184,9 +174,9 @@ docs/
 ```
 
 参照ドキュメント:
-- `feature-<task-no>.md` の受け入れ条件
-- `design.md` の API 設計
-- `requirement.md` の機能要件
+- `tasks.md` の対応UC
+- `requirement.md` の受け入れ条件・ビジネスルール
+- `design.md` の API設計・データモデル
 
 ### 3.5 レビュー
 
