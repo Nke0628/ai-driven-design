@@ -2,8 +2,8 @@
 
 > **パラメータ**: `$ARGUMENTS` に `identifier` と `説明` を指定してください
 >
-> - 形式: `/usecase <identifier> <説明>`
-> - 例: `/usecase SMP-789 お気に入りボタンの追加`
+> - 形式: `/feature <identifier> <説明>`
+> - 例: `/feature SMP-789 お気に入りボタンの追加`
 >
 > **指示**: このプロンプトは小規模な機能追加・改修の仕様書作成を目的としています。
 >
@@ -12,7 +12,7 @@
 > - `{...}` のプレースホルダーを具体的な内容に置き換えてください
 > - 調査の結果、特定できない項目は「要調査」と記載してください
 > - `$ARGUMENTS` の最初の単語を `identifier` として扱い、それ以降を `説明` として扱ってください
-> - 完成した仕様書は `docs/<identifier>/usecase.md` に保存してください
+> - 完成した仕様書は `docs/<identifier>/feature.md` に保存してください
 >
 > **用途**: requirement → design-detail → tasks のフローを経ずに、単体で小規模な改修を行う場合に使用
 

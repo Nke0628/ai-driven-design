@@ -5,7 +5,7 @@
 > - 形式: `/implement <identifier> [task-no]`
 > - 例:
 >   - `/implement SMP-123 1` - タスク1を実装（機能開発フロー）
->   - `/implement SMP-456` - bugfix / usecase を実装
+>   - `/implement SMP-456` - bugfix / feature を実装
 >
 > **指示**: このプロンプトは実装を目的としています。
 >
@@ -23,7 +23,7 @@
 
 | ドキュメント                             | 内容                   |
 | ---------------------------------------- | ---------------------- |
-| `docs/<identifier>/usecase-<task-no>.md` | ユースケース詳細       |
+| `docs/<identifier>/feature-<task-no>.md` | ユースケース詳細       |
 | `docs/<identifier>/tasks.md`             | タスク一覧・依存関係   |
 | `docs/<identifier>/design-detail.md`     | API設計・データモデル  |
 | `docs/<identifier>/requirement.md`       | 機能要件・非機能要件   |
@@ -38,7 +38,7 @@
 
 | ドキュメント                    | 内容                       |
 | ------------------------------- | -------------------------- |
-| `docs/<identifier>/usecase.md`  | ユースケース詳細           |
+| `docs/<identifier>/feature.md`  | ユースケース詳細           |
 
 ---
 

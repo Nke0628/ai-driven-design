@@ -19,7 +19,7 @@
 ## 参照
 
 #file:docs/{identifier}/requirement.md
-#file:docs/{identifier}/usecase.md
+#file:docs/{identifier}/feature.md
 
 ---
 

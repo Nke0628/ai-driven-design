@@ -59,7 +59,7 @@ AI を活用した開発フローの実践ガイド
 │       ↓                                                     │
 │  /design-detail <identifier> <説明>                         │
 │       ↓                                                     │
-│  /tasks <identifier>  → tasks.md + usecase-*.md 生成        │
+│  /tasks <identifier>  → tasks.md + feature-*.md 生成        │
 │       ↓                                                     │
 │  /implement <identifier> 1  → タスク1を実装                  │
 │  /implement <identifier> 2  → タスク2を実装                  │
@@ -82,7 +82,7 @@ AI を活用した開発フローの実践ガイド
 ├─────────────────────────────────────────────────────────────┤
 │ 小規模改修フロー                                             │
 │                                                             │
-│  /usecase <identifier> <説明>                               │
+│  /feature <identifier> <説明>                               │
 │       ↓                                                     │
 │  /implement <identifier>    → 実装                          │
 │       ↓                                                     │
@@ -101,10 +101,10 @@ docs/
     ├── requirement.md      # /requirement で生成
     ├── design-detail.md    # /design-detail で生成
     ├── tasks.md            # /tasks で生成
-    ├── usecase-1.md        # /tasks で生成（タスク1）
-    ├── usecase-2.md        # /tasks で生成（タスク2）
-    ├── usecase-3.md        # /tasks で生成（タスク3）
-    ├── usecase.md          # /usecase で生成（小規模改修）
+    ├── feature-1.md        # /tasks で生成（タスク1）
+    ├── feature-2.md        # /tasks で生成（タスク2）
+    ├── feature-3.md        # /tasks で生成（タスク3）
+    ├── feature.md          # /feature で生成（小規模改修）
     ├── bugfix.md           # /bugfix で生成
     └── testcase.md         # /testcase で生成
 ```
@@ -116,7 +116,7 @@ docs/
 | `/requirement` | `/requirement <identifier> <説明>` | 要件定義書の作成 |
 | `/design-detail` | `/design-detail <identifier> <説明>` | 詳細設計書の作成 |
 | `/tasks` | `/tasks <identifier>` | タスク分割 & ユースケース生成 |
-| `/usecase` | `/usecase <identifier> <説明>` | 小規模改修の仕様書作成 |
+| `/feature` | `/feature <identifier> <説明>` | 小規模改修の仕様書作成 |
 | `/bugfix` | `/bugfix <identifier> <説明>` | バグ修正仕様書の作成 |
 | `/implement` | `/implement <identifier> [task-no]` | 実装 |
 | `/review` | `/review <identifier> [task-no]` | レビュー |
@@ -165,8 +165,8 @@ docs/
 
 **出力**:
 - `docs/SMP-123/tasks.md` - タスク一覧
-- `docs/SMP-123/usecase-1.md` - タスク1のユースケース
-- `docs/SMP-123/usecase-2.md` - タスク2のユースケース
+- `docs/SMP-123/feature-1.md` - タスク1のユースケース
+- `docs/SMP-123/feature-2.md` - タスク2のユースケース
 - ...
 
 各ユースケースには以下を含む：
@@ -184,7 +184,7 @@ docs/
 ```
 
 参照ドキュメント:
-- `usecase-<task-no>.md` の受け入れ条件
+- `feature-<task-no>.md` の受け入れ条件
 - `design-detail.md` の API 設計
 - `requirement.md` の機能要件
 
@@ -246,10 +246,10 @@ requirement → design-detail → tasks のフローを経ずに、単体で小�
 ### 5.1 仕様書作成
 
 ```bash
-/usecase SMP-789 お気に入りボタンの追加
+/feature SMP-789 お気に入りボタンの追加
 ```
 
-**出力**: `docs/SMP-789/usecase.md`
+**出力**: `docs/SMP-789/feature.md`
 
 ### 5.2 実装 & レビュー & テスト
 
@@ -273,7 +273,7 @@ project/
 │       ├── requirement.prompt.md  # 要件定義
 │       ├── design-detail.prompt.md# 詳細設計
 │       ├── tasks.prompt.md        # タスク分割
-│       ├── usecase.prompt.md      # 小規模改修
+│       ├── feature.prompt.md      # 小規模改修
 │       ├── bugfix.prompt.md       # バグ修正
 │       ├── implement.prompt.md    # 実装
 │       ├── review.prompt.md       # レビュー
