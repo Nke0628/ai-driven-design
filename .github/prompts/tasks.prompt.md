@@ -8,17 +8,17 @@
 > **指示**: このプロンプトはタスク分割を目的としています。
 >
 > - コードの実装・修正は行わないでください
-> - `docs/<identifier>/design.md` を読み込み、実装タスクを分割してください
+> - `spec/<identifier>/design.md` を読み込み、実装タスクを分割してください
 > - 1タスク = 1PR を目安に
 > - 受け入れ条件は `requirement.md` を参照
-> - 出力ファイル: `docs/<identifier>/tasks.md`
+> - 出力ファイル: `spec/<identifier>/tasks.md`
 
 ---
 
 ## 参照ドキュメント
 
-#file:docs/{identifier}/requirement.md
-#file:docs/{identifier}/design.md
+#file:spec/{identifier}/requirement.md
+#file:spec/{identifier}/design.md
 
 ---
 

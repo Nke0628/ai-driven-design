@@ -12,13 +12,13 @@
 > - `{...}` のプレースホルダーを具体的な内容に置き換えてください
 > - 該当しないセクションは削除してください
 > - `$ARGUMENTS` の最初の単語を `identifier` として扱い、それ以降を `説明` として扱ってください
-> - 完成した詳細設計書は `docs/<identifier>/design.md` に保存してください
+> - 完成した詳細設計書は `spec/<identifier>/design.md` に保存してください
 
 ---
 
 ## 参照
 
-#file:docs/{identifier}/requirement.md
+#file:spec/{identifier}/requirement.md
 
 ---
 
