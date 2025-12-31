@@ -75,5 +75,5 @@
 > この要件定義書の作成後、以下のコマンドで詳細設計に進んでください:
 >
 > ```
-> /design-detail <identifier> <説明>
+> /design <identifier> <説明>
 > ```

@@ -8,7 +8,7 @@
 > **指示**: このプロンプトはタスク分割とユースケース生成を目的としています。
 >
 > - コードの実装・修正は行わないでください
-> - `docs/<identifier>/design-detail.md` を読み込み、実装タスクを分割してください
+> - `docs/<identifier>/design.md` を読み込み、実装タスクを分割してください
 > - 1タスク = 1PR、2-4時間程度を目安に
 > - **各タスクごとにユースケースファイルを生成してください**
 > - 出力ファイル:
@@ -22,7 +22,7 @@
 ## 参照ドキュメント
 
 - 要件定義: `docs/<identifier>/requirement.md`
-- 詳細設計: `docs/<identifier>/design-detail.md`
+- 詳細設計: `docs/<identifier>/design.md`
 
 ---
 
@@ -68,7 +68,7 @@
 | タスク No    | {n}                        |
 | タスク名     | {タスク名}                 |
 | 対応 UC      | {UC-001 など}              |
-| 参照         | tasks.md, design-detail.md |
+| 参照         | tasks.md, design.md |
 
 ## 背景
 

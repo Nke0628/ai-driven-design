@@ -57,7 +57,7 @@ AI を活用した開発フローの実践ガイド
 │                                                             │
 │  /requirement <identifier> <説明>                           │
 │       ↓                                                     │
-│  /design-detail <identifier> <説明>                         │
+│  /design <identifier> <説明>                                │
 │       ↓                                                     │
 │  /tasks <identifier>  → tasks.md + feature-*.md 生成        │
 │       ↓                                                     │
@@ -99,7 +99,7 @@ AI を活用した開発フローの実践ガイド
 docs/
 └── <identifier>/           # 例: SMP-123
     ├── requirement.md      # /requirement で生成
-    ├── design-detail.md    # /design-detail で生成
+    ├── design.md           # /design で生成
     ├── tasks.md            # /tasks で生成
     ├── feature-1.md        # /tasks で生成（タスク1）
     ├── feature-2.md        # /tasks で生成（タスク2）
@@ -114,7 +114,7 @@ docs/
 | コマンド | 形式 | 用途 |
 |----------|------|------|
 | `/requirement` | `/requirement <identifier> <説明>` | 要件定義書の作成 |
-| `/design-detail` | `/design-detail <identifier> <説明>` | 詳細設計書の作成 |
+| `/design` | `/design <identifier> <説明>` | 詳細設計書の作成 |
 | `/tasks` | `/tasks <identifier>` | タスク分割 & ユースケース生成 |
 | `/feature` | `/feature <identifier> <説明>` | 小規模改修の仕様書作成 |
 | `/bugfix` | `/bugfix <identifier> <説明>` | バグ修正仕様書の作成 |
@@ -142,10 +142,10 @@ docs/
 ### 3.2 詳細設計
 
 ```bash
-/design-detail SMP-123 記事検索機能の API 設計
+/design SMP-123 記事検索機能の API 設計
 ```
 
-**出力**: `docs/SMP-123/design-detail.md`
+**出力**: `docs/SMP-123/design.md`
 
 - 機能概要（機能名、機能ID、概要、対象ユーザー）
 - 処理フロー（フロー図、処理フロー説明）
@@ -185,7 +185,7 @@ docs/
 
 参照ドキュメント:
 - `feature-<task-no>.md` の受け入れ条件
-- `design-detail.md` の API 設計
+- `design.md` の API 設計
 - `requirement.md` の機能要件
 
 ### 3.5 レビュー
@@ -241,7 +241,7 @@ docs/
 
 ## 5. 小規模改修フロー（詳細）
 
-requirement → design-detail → tasks のフローを経ずに、単体で小規模な改修を行う場合に使用。
+requirement → design → tasks のフローを経ずに、単体で小規模な改修を行う場合に使用。
 
 ### 5.1 仕様書作成
 
@@ -271,7 +271,7 @@ project/
 │   ├── copilot-instructions.md    # 共通指示
 │   └── prompts/
 │       ├── requirement.prompt.md  # 要件定義
-│       ├── design-detail.prompt.md# 詳細設計
+│       ├── design.prompt.md       # 詳細設計
 │       ├── tasks.prompt.md        # タスク分割
 │       ├── feature.prompt.md      # 小規模改修
 │       ├── bugfix.prompt.md       # バグ修正

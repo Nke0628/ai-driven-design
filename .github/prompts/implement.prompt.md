@@ -25,7 +25,7 @@
 | ---------------------------------------- | ---------------------- |
 | `docs/<identifier>/feature-<task-no>.md` | ユースケース詳細       |
 | `docs/<identifier>/tasks.md`             | タスク一覧・依存関係   |
-| `docs/<identifier>/design-detail.md`     | API設計・データモデル  |
+| `docs/<identifier>/design.md`     | API設計・データモデル  |
 | `docs/<identifier>/requirement.md`       | 機能要件・非機能要件   |
 
 ### バグ修正フロー

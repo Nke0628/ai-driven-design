@@ -14,7 +14,7 @@
 > - `$ARGUMENTS` の最初の単語を `identifier` として扱い、それ以降を `説明` として扱ってください
 > - 完成した仕様書は `docs/<identifier>/feature.md` に保存してください
 >
-> **用途**: requirement → design-detail → tasks のフローを経ずに、単体で小規模な改修を行う場合に使用
+> **用途**: requirement → design → tasks のフローを経ずに、単体で小規模な改修を行う場合に使用
 
 ---
 
